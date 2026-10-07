@@ -68,16 +68,35 @@ The analysis included yearly average egg prices and yearly average product price
 
 ## Project Evidence
 
-Project documentation includes:
+### Glue ETL Execution and Troubleshooting
 
-- AWS Glue ETL job execution
-- Raw and processed Amazon S3 objects
-- AWS Glue Data Catalog tables
-- Saved Athena queries
-- Athena query screenshots
-- Exported Athena query results
+The Glue job history shows the initial failed run and the successful run after correcting the IAM permissions.
 
-Selected screenshots from this documentation are included in the repository to demonstrate the pipeline and analysis.
+![AWS Glue ETL job execution](screenshots/small_batch_GlueJob_CSVtoParquet.png)
+
+### Processed Parquet Data
+
+The transformed Parquet files were successfully written to the processed Amazon S3 location.
+
+![Processed Parquet data in Amazon S3](screenshots/small_batch_S3_Processed.png)
+
+### Record Count Validation
+
+Amazon Athena was used to verify that all 8,869 records were preserved in the processed dataset.
+
+![Athena record count validation](screenshots/small_batch_Athena_COUNT.png)
+
+### Athena Analysis
+
+Additional SQL queries were used to analyze yearly average prices.
+
+![Yearly average egg query](screenshots/yearly_egg_Avg_query.png)
+
+![Yearly average egg results](screenshots/yearly_egg_Avg_results.png)
+
+![Yearly average product query](screenshots/AVG_yearly_all_query.png)
+
+![Yearly average product results](screenshots/AVG_yearly_all.png)
 
 ## What I Learned
 
